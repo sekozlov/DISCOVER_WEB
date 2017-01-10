@@ -21,7 +21,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div id="mainpic" align="center" class="blur pic">
-                            <a class="open_window"href="#">
+                            <a class="open_window" href="#">
                                 <img width="400" height="400" src="IMGS/ActiOn_3.jpg" >
                                 </a>
                                 <script>
@@ -61,7 +61,6 @@
             <div class='popimg' style="float:right;">
                 <img width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
-        </div>
             <script type="text/javascript">
             $('.popup .close_window, .overlay').click(function (){
             $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
@@ -72,6 +71,7 @@
             });
             console.log('success');
             </script>
+        </div>
             <div style="display: none"> 
             <?php
             $url = 'https://www.discogs.com/search/?q='.'skillet'.'+-+'.'unleashed'.'&type=all';

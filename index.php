@@ -37,10 +37,15 @@
         </div>
     </div>
 <script type="text/javascript">
- $(document).ready(function(){
- alert(jQuery.fn.jquery);
- });
- </script>
+            $('.popup .close_window, .overlay').click(function (){
+            $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
+            });
+            $('a.open_window').click(function (e){
+            $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
+            e.preventDefault();
+            });
+            console.log('success');
+            </script>
          <div class="overlay"></div>
             <div class="popup">
             <div class="close_window">x</div>

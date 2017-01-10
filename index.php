@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col-lg-12" align="center">
                     <h1 class="page-header">Добро пожаловать в мир новой музыки!</h1>
+                 <a href="test.php">текст ссылки</a>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

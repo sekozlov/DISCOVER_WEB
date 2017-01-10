@@ -45,7 +45,7 @@
             <div class="poptext" style="color: #ddd; float:left;"> 
 <!--              TEXT TEXT TEXT -->
             <?php 
-                            include_once 'simplehtml/simple_html_dom.php';
+                            require_once ('simplehtml/simple_html_dom.php');
                             $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
                             $e = $html->find('div[id=tracklist]', 0);
                             echo $e; ?>

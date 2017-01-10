@@ -10,6 +10,6 @@
     <link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 </head>

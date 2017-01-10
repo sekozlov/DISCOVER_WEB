@@ -36,7 +36,11 @@
             </div>
         </div>
     </div>
-
+<script type="text/javascript">
+ $(document).ready(function(){
+ alert(jQuery.fn.jquery);
+ });
+ </script>
          <div class="overlay"></div>
             <div class="popup">
             <div class="close_window">x</div>

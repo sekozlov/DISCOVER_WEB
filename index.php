@@ -36,31 +36,12 @@
             </div>
         </div>
     </div>
-<script type="text/javascript">
-            $('.popup .close_window, .overlay').click(function (){
-            $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
-            });
-            $('a.open_window').click(function (e){
-            $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
-            e.preventDefault();
-            });
-            console.log('success');
-            </script>
+
          <div class="overlay"></div>
             <div class="popup">
             <div class="close_window">x</div>
             <div class="poptext" style="color: #ddd; float:left;"> 
-            <?php 
-                            include 'simplehtml/simple_html_dom.php';
-                            // $href = 'https://www.discogs.com/Skillet-Unleashed/release/8854637';
-                            // $page = file_get_contents($href);
-                            // preg_match("/<div.*id=\"tracklist\".*>*<\/div>/",$page,$match);
-                            // print_r($page);
-
-                            $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
-                            $e = $html->find('div[id=tracklist]', 0);
-                            echo $e;
-                             ?>
+            text
                              </div>
             <div class='popimg' style="float:right;">
                 <img width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
@@ -68,14 +49,7 @@
 
         </div>
             <div style="display: none"> 
-            <?php
-            $url = 'https://www.discogs.com/search/?q='.'skillet'.'+-+'.'unleashed'.'&type=all';
-            $html = file_get_html($url);
-            $e = $html->find('div[id=search_results]', 0)->find('div', 0);
-            preg_match("/<h4.*.*>*<\/h4>/",$e,$match);
-            preg_match("/<a.*.*>*<\/a>/iU",$match[0],$match1);
-            echo $match1[0];
-            ?>
+            
             <script type="text/javascript">
             var link = document.getElementsByClassName('search_result_title');
             var href = link["0"].href;

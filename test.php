@@ -1,5 +1,7 @@
 <?php 
-require_once ('simplehtml/simple_html_dom.php');
-$html=file_get_html('http://ya.ru'); 
-echo $html
+ require_once ('simplehtml/simple_html_dom.php');
+                            $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
+                            print_r($html);
+//                             $e = $html->find('div[id=tracklist]', 0);
+//                             echo $e;
 ?>

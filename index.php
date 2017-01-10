@@ -37,8 +37,6 @@
                             ?>
                         <!-- /.panel-body -->
                     </div>
-                                <div id="popup" class="popup">
-                </div>
             </div>
         </div>
     </div>

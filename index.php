@@ -61,16 +61,7 @@
             <div class='popimg' style="float:right;">
                 <img width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
-            <script type="text/javascript">
-            $('.popup .close_window, .overlay').click(function (){
-            $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
-            });
-            $('a.open_window').click(function (e){
-            $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
-            e.preventDefault();
-            });
-            console.log('success');
-            </script>
+
         </div>
             <div style="display: none"> 
             <?php
@@ -88,5 +79,15 @@
             console.log(sub);
             </script>
             </div>
+            <script type="text/javascript">
+            $('.popup .close_window, .overlay').click(function (){
+            $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
+            });
+            $('a.open_window').click(function (e){
+            $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
+            e.preventDefault();
+            });
+            console.log('success');
+            </script>
 </body>
 </html>

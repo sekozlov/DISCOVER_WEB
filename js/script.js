@@ -1,6 +1,3 @@
-function show_album(){
-    window.open(#);
-}
 
 function toogleMy(strId,elemInp){//'ViborReg'
     var elem=document.getElementById(strId);

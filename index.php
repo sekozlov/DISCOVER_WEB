@@ -65,13 +65,21 @@
 
         </div>
             <div style="display: none"> 
-            
-            <script type="text/javascript">
+            <?php 
+            $url = 'https://www.discogs.com/search/?q='.'skillet'.'+-+'.'unleashed'.'&type=all';
+            $doc = new DOMDocument();
+            $doc->loadHTMLFile($url);
+            $elements = $doc->getElementsByTagName('h4');
+            $nodes = $elements[0]->childNodes;
+            $url = $nodes[0]->getAttribute('href');
+            echo $url;
+             ?>
+<!--             <script type="text/javascript">
             var link = document.getElementsByClassName('search_result_title');
             var href = link["0"].href;
             var sub = href.substr(16)
             console.log(sub);
-            </script>
+            </script> -->
             </div>
             <script type="text/javascript">
             $('.popup .close_window, .overlay').click(function (){

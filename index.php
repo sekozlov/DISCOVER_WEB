@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-<!--     <?php include_once "footer.php"; ?> -->
+
          <div class="overlay"></div>
             <div class="popup">
             <div class="close_window">x</div>

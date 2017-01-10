@@ -1,8 +1,21 @@
 <?php require_once ('simplehtml/simple_html_dom.php');
-$html=file_get_contents('https://www.discogs.com/Skillet-Unleashed/release/8854637'); 
-$html = str_get_html($html);
-$e = $html->find('div[id=tracklist]', 0);
-// preg_match("/<div.*id=\"tracklist\".*>*<\/div>/",$html[0],$match);
-// print_r($html);
-echo $e;
+$doc = new DOMDocument();
+$doc->loadHTMLFile('https://www.discogs.com/Skillet-Unleashed/release/8854637');
+$elements = $doc->getElementsByTagName('table');
+// echo $doc->saveHTML();
+// if (!is_null($elements)) {
+//   foreach ($elements as $element) {
+//     echo "<br/>". $element->nodeName. ": ";
+
+//     $nodes = $element->childNodes;
+//     foreach ($nodes as $node) {
+//       echo $node->nodeValue. "\n";
+//     }
+//   }
+// }
+$nodes = $elements[0]->childNodes;
+foreach ($nodes as $node) {
+       echo $node->nodeValue. "<br/>";
+     }
+
 ?>

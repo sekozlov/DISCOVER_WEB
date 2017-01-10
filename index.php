@@ -2,7 +2,7 @@
  <?php include_once "header.php"; ?>
       
 <body>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
     <?php include_once "menu.php"; ?>
         <div id="page-wrapper">

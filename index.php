@@ -46,7 +46,8 @@
 <!--              TEXT TEXT TEXT -->
             <?php 
                             require_once ('simplehtml/simple_html_dom.php');
-                            $html = file_get_contents('https://www.discogs.com/Skillet-Unleashed/release/8854637');
+                            $html=file_get_contents('https://www.discogs.com/Skillet-Unleashed/release/8854637'); 
+                            $html = str_get_html($html);
                             print_r($html);
 //                             $e = $html->find('div[id=tracklist]', 0);
 //                             echo $e; ?>

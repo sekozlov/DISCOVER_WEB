@@ -5,8 +5,8 @@
         "chh/cache-service-provider": "~1.0",
         "ext-libevent": "*",
         "ext-curl": "*",
-        "ext-sundown": "*"
-        "gd": "*"
+        "ext-sundown": "*",
+        "gd": "*",
         "mbstring": "*"
     },
     "extra": {

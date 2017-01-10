@@ -24,11 +24,6 @@
                             <a class="open_window" href="#">
                                 <img width="400" height="400" src="IMGS/ActiOn_3.jpg" >
                                 </a>
-                                <script>
-                                function show_album(){
-                                    window.open("https://play.google.com/store/music/album/Skillet_Unleashed?id=Bwvoawl4jrhfpxqrtwpweggdloa&hl=ru");
-                                }
-                                </script>
                             </div>
                             <!-- /.table-responsive -->
                             

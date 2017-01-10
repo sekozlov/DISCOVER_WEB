@@ -42,11 +42,12 @@
             <div class="popup">
             <div class="close_window">x</div>
             <div class="poptext" style="color: #ddd; float:left;"> 
-            <?php 
+             TEXT TEXT TEXT
+<!--             <?php 
                             include_once 'simplehtml/simple_html_dom.php';
                             $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
                             $e = $html->find('div[id=tracklist]', 0);
-                            echo $e; ?>
+                            echo $e; ?> -->
                              </div>
             <div class='popimg' style="float:right;">
                 <img width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">

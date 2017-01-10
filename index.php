@@ -70,6 +70,7 @@
             $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
             e.preventDefault();
             });
+            console.log('success');
             </script>
             <div style="display: none"> 
             <?php

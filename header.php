@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8">
+    <script src="bower_components/bootstrap/js/bootstrap.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
     <script src="js/script.js"></script>

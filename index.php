@@ -2,6 +2,7 @@
  <?php include_once "header.php"; ?>
       
 <body>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
     <?php include_once "menu.php"; ?>
         <div id="page-wrapper">
@@ -79,7 +80,6 @@
             preg_match("/<a.*.*>*<\/a>/iU",$match[0],$match1);
             echo $match1[0];
             ?>
-            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
             <script type="text/javascript">
             var link = document.getElementsByClassName('search_result_title');
             var href = link["0"].href;

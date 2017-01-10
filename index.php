@@ -2,7 +2,7 @@
  <?php include_once "header.php"; ?>
       
 <body>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+<!--             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script> -->
     <div id="wrapper">
     <?php include_once "menu.php"; ?>
         <div id="page-wrapper">
@@ -41,12 +41,12 @@
             </div>
         </div>
     </div>
-    <?php include_once "footer.php"; ?>
+<!--     <?php include_once "footer.php"; ?> -->
          <div class="overlay"></div>
             <div class="popup">
             <div class="close_window">x</div>
             <div class="poptext" style="color: #ddd; float:left;"> 
-<!--             <?php 
+            <?php 
                             include 'simplehtml/simple_html_dom.php';
                             // $href = 'https://www.discogs.com/Skillet-Unleashed/release/8854637';
                             // $page = file_get_contents($href);
@@ -56,7 +56,7 @@
                             $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
                             $e = $html->find('div[id=tracklist]', 0);
                             echo $e;
-                             ?> -->
+                             ?>
                              </div>
             <div class='popimg' style="float:right;">
                 <img width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">

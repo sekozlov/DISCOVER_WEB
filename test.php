@@ -74,7 +74,7 @@
                         <div  class="panel-body">
                         <div id="panel" style="    display: flex;justify-content: space-between;">
                             <div id="mainpic" class="blur">
-                            <a class="open_window1" href="test.php" style="margin-bottom: 10">
+                            <a class="open_window" href="test.php" style="margin-bottom: 10">
                                 <img id="image" width="200" height="200" src="" >
                                 </a>
                                 <p align="center">
@@ -82,7 +82,7 @@
                                 </p>
                             </div>
                             <div id="mainpic1" class="blur">
-                                <a class="open_window1" href="test.php" style="margin-bottom: 10">
+                                <a class="open_window" href="test.php" style="margin-bottom: 10">
                                 <img id="image1" width="200" height="200" src="" >
                                 </a>
                                 <p align="center">
@@ -94,7 +94,7 @@
                                 </script>
                             </div>
                             <div id="mainpic2" class="blur">
-                                <a class="open_window1" href="test.php" style="margin-bottom: 10">
+                                <a class="open_window" href="test.php" style="margin-bottom: 10">
                                 <img id="image2" width="200" height="200" src="" >
                                 </a>
                                 <p align="center">
@@ -121,41 +121,31 @@
     <?php include_once "footer.php"; ?>
 
          <div class="overlay"></div>
-            <div class="popup">
-            <div class="close_window">x</div>
+            <div class="popup1">
+            <div class="close_window"></div>
             <div class="poptext" style="color: #ddd; float:left; align-self: center;"> 
-            <?php 
-                            require_once ('simplehtml/simple_html_dom.php');
-                                                       $doc = new DOMDocument();
-                                          $doc->loadHTMLFile('https://www.discogs.com'.$url1);
-                                          $elements = $doc->getElementsByTagName('table');
-                                          $nodes = $elements[0]->childNodes;
-                                          foreach ($nodes as $node) {
-                                                 echo substr($node->nodeValue , 0,105). "<br/>";
-                                               }
-                            // $href = 'https://www.discogs.com/Skillet-Unleashed/release/8854637';
-                            // $page = file_get_contents($href);
-                            // preg_match("/<div.*id=\"tracklist\".*>*<\/div>/",$page,$match);
-                            // print_r($page);
-
-                            // $html = file_get_html('https://www.discogs.com/Skillet-Unleashed/release/8854637');
-                            // $e = $html->find('div[id=tracklist]', 0);
-                            // echo $e;
-                             ?>
+            <p align="center">
+            УРА!
+            Теперь ты можешь слушать <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b> сколько угодно!
+            </p>
+            <a href="test.php">На главную. </a>
 
                              </div>
-            <div class='popimg' style="float:right; align-self: center; width: 310px;">
-                <img id='image' width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
+            <div class='popimg' style=" align-self: center;">
+                <img id='image' width="500" height="250" src="IMGS/happy.jpg" align="center">
+                <script type="text/javascript">
+                document.getElementById('image').src = getCookie('img_name'); 
+                </script>
             </div>
 
 
         </div>
             <script type="text/javascript">
-            $('.popup .close_window, .overlay').click(function (){
-            $('.popup, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
+            $('.popup1 .close_window, .overlay').click(function (){
+            $('.popup1, .overlay').css({'opacity': 0, 'visibility': 'hidden'});
             });
             $('a.open_window').click(function (e){
-            $('.popup, .overlay').css({'opacity': 1, 'visibility': 'visible'});
+            $('.popup1, .overlay').css({'opacity': 1, 'visibility': 'visible'});
             e.preventDefault();
             });
             console.log('success');

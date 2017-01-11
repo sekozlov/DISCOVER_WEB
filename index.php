@@ -108,7 +108,7 @@
                                           $elements = $doc->getElementsByTagName('table');
                                           $nodes = $elements[0]->childNodes;
                                           foreach ($nodes as $node) {
-                                                 echo substr($node->nodeValue , 0,105). "<br/>";
+                                                 echo substr($node->nodeValue , 0,75). "<br/>";
                                                }
                             // $href = 'https://www.discogs.com/Skillet-Unleashed/release/8854637';
                             // $page = file_get_contents($href);

@@ -29,9 +29,9 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="mainpic" align="center" style="margin-left: auto; margin-right: auto">
+                            <div id="mainpic" align="center" style="margin-left: auto; margin-right: auto; margin-top: 10%;margin-bottom: 10%;">
                             <a class="open_window" href="index.php">
-                                <img id="image" width="100%" height="400" src="IMGS/giphy.gif" >
+                                <img id="image" width="200" height="200" src="IMGS/gears.gif" >
                                 </a>
 
                             </div>

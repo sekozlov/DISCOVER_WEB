@@ -25,7 +25,8 @@
                             <a href="index.php"><i class="fa fa-gift fa-fw"></i>Time to Discover!</a>
                         </li>
                         <li>
-                            <a href="add_album.php" class="active"><i class="fa fa-briefcase fa-fw"></i>Your Discoveriography</a>
+<!--                                      class="active" -->
+                            <a href="add_album.php"><i class="fa fa-briefcase fa-fw"></i>Your Discoveriography</a>
                         </li>
                         <li>
                             <a href="add_album.php" ><i class="fa fa-edit fa-fw"></i>Add Albums</a>

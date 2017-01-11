@@ -128,7 +128,7 @@
             УРА!
             Теперь ты можешь слушать <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b> сколько угодно!
             </p>
-            <a href="test.php">На главную. </a>
+            <a href="test.php">Еще треков. </a>
 
                              </div>
             <div class='popimg' style=" align-self: center;">

@@ -106,7 +106,7 @@
 .popup .close_window:active {
   background: #8f9be0;
 }
-.pic {
+/* .pic {
   border: 10px solid #fff;  
   float: none;
   height: 400px;
@@ -118,7 +118,7 @@
   -webkit-box-shadow: 5px 5px 5px #111;
 /*          box-shadow: 5px 5px 5px #111;  */
 }
-
+ */
 .blur img {
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;

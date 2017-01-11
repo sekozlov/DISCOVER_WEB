@@ -31,6 +31,9 @@
                         <li>
                             <a href="add_album.php" ><i class="fa fa-edit fa-fw"></i>Add Albums</a>
                         </li>
+                         <li>
+                            <a href="add_album.php" ><i class="fa fa-gears fa-fw"></i>TEST!</a>
+                        </li>
                         <!--<li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i>Настройка </a>
                         </li>-->

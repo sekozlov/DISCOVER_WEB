@@ -66,44 +66,48 @@
             </div>
        <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-default" id="Panelll" style="display:block;">
+                    <div class="panel panel-default" id="Panelll">
                         <div class="panel-heading" align="center">
-                            Самое время для <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b> с альбома <b><script>document.write(getCookie('discov_album').split('+').join(' ')) </script></b>!
+                           Выбери один трек: он будет считаться прослушанным, остальные вернутся в мешок!
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
-                        <div >
-                            <div id="mainpic" class="blur" style="float: left;position: relative;">
-                            <a class="open_window" href="#"">
+                        <div  class="panel-body">
+                        <div id="panel" style="    display: flex;justify-content: space-between;">
+                            <div id="mainpic" class="blur">
+                            <a class="open_window1" href="test.php" style="margin-bottom: 10">
                                 <img id="image" width="200" height="200" src="IMGS/ActiOn_3.jpg" >
                                 </a>
-
+                                <p align="center">
+                                <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b>
+                                </p>
                             </div>
-                            <div id="mainpic1" class="blur"  style="float:right">
-
+                            <div id="mainpic1" class="blur">
+                                <a class="open_window1" href="test.php" style="margin-bottom: 10">
                                 <img id="image1" width="200" height="200" src="IMGS/ActiOn_3.jpg" >
+                                </a>
+                                <p align="center">
+                                <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b>
+                                </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));
                                 document.getElementById('image').src = getCookie('img_name');
                                 </script>
                             </div>
-                            <div id="mainpic2" class="blur" style="float: left;position: relative;left: 50%;">
-                              <div style="float: left;position: relative;left: -150%;">
-                            <a class="open_window" href="#"">
+                            <div id="mainpic2" class="blur">
+                                <a class="open_window1" href="test.php" style="margin-bottom: 10">
                                 <img id="image2" width="200" height="200" src="IMGS/ActiOn_3.jpg" >
                                 </a>
+                                <p align="center">
+                                <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b>
+                                </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));
                                 document.getElementById('image').src = getCookie('img_name');
                                 </script>
-                                <script>
-                                function show_album(){
-                                    window.open("https://play.google.com/store/music/album/Skillet_Unleashed?id=Bwvoawl4jrhfpxqrtwpweggdloa&hl=ru");
-                                }
-                                </script>
-                                </div>
+                            </div>
                             </div>
                             <!-- /.table-responsive -->
+                            <span class="stretch"></span>
                              </div>
                         </div>
 
@@ -139,10 +143,11 @@
 
                              </div>
             <div class='popimg' style="float:right; align-self: center; width: 310px;">
-                <img id='image1' width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
+                <img id='image' width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
             <script type="text/javascript">
                                 document.getElementById('image1').src = getCookie('img_name');
+                                document.getElementById('image2').src = getCookie('img_name');
                                 </script>
 
         </div>

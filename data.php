@@ -18,7 +18,7 @@
                  'SaveAs' => '/tmp/discover1.csv'
             ));
              //   echo $result['Body'];
-                $data = array_map('str_getcsv', file('/tmp/discover1.csv'));
+                $data = array_map('str_getcsv', file('/tmp/discover.csv'));
 //$data = array_map('str_getcsv', file('discover.csv'));
 print_r($data);
 $i = rand(1,count($data)-1);

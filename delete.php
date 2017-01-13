@@ -33,7 +33,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
              $datacsv = '';
         foreach ($data as $fields) {
         print_r($fields);
-        $datacsv .= str_putcsv($fp,$fields);
+        $datacsv .= str_putcsv($fields);
         }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {

@@ -7,7 +7,7 @@
 
 
 <?php 
-            $data = array_map('str_getcsv', file('http://s3.amazonaws.com/discover-song/discover.csv'));
+            $data = array_map('str_getcsv', file('discover.csv'));
             unset($data[$_COOKIE['discov_ind']]);
             sort($data);
             $datacsv = arrayToCsv($data);

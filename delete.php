@@ -24,7 +24,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     }
  
 
-          //  ini_set('display_errors', 'On');
+            ini_set('display_errors', 'On');
            $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);

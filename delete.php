@@ -7,7 +7,7 @@
 
 
 <?php 
- ini_set('display_errors', 'On');
+// ini_set('display_errors', 'On');
 function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     {
         // Open a memory "file" for read/write...
@@ -47,7 +47,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
            // $data = array_values(array($data));
 
            // echo gettype($result['Body']);
-            print_r($data);
+      //      print_r($data);
            unset($data[$_COOKIE['discov_ind']]);
 
            sort($data);

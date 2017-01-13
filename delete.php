@@ -17,11 +17,11 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
         // ... rewind the "file" so we can read what we just wrote...
         rewind($fp);
         // ... read the entire line into a variable...
-        $data = fread($fp, 1048576);
+        $data1 = fread($fp, 1048576);
         // ... close the "file"...
         fclose($fp);
         // ... and return the $data to the caller, with the trailing newline from fgets() removed.
-        return rtrim($data, "\n");
+        return rtrim($data1, "\n");
     }
  
 
@@ -29,9 +29,9 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
            $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);
-             $datacsv  '';
+             $datacsv = '';
         foreach ($data as $fields) {
-        $datacsv .= str_putcsv($fields);
+        $datacsv .= str_putcsv($fp,$fields);
         }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {

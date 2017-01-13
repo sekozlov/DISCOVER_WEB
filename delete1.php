@@ -47,7 +47,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
                 $data = array_map('str_getcsv', file('/tmp/discover.csv'));
            // $data = array_values(array($data));
            // echo gettype($result['Body']);
-            print_r($data);
+          //  print_r($data);
            unset($data[$_COOKIE['discov_ind1']]);
            sort($data);
              $datacsv = '';
@@ -74,6 +74,7 @@ echo $result['ServerSideEncryption'] . "\n";
 echo $result['ETag'] . "\n";
 echo $result['VersionId'] . "\n";
 echo $result['RequestId'] . "\n";
-            echo "<script>alert('Сделано =)');</script>";
+            echo "<script>alert('Сделано =)');
+            document.location = 'test.php';</script>";
            
             ?>

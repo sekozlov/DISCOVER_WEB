@@ -7,15 +7,15 @@
 
 
 <?php 
-            //$data = array_map('str_getcsv', file('http://s3.amazonaws.com/discover-song/discover.csv'));
-            // unset($data[$_COOKIE['discov_ind']]);
-            // sort($data);
-            // $datacsv = arrayToCsv($data);
-            // $fp = fopen('discover.csv', 'w');
-            // foreach ($data as $fields) {
-            //     fputcsv($fp, $fields);
-            // }
-            // fclose($fp);
+            $data = array_map('str_getcsv', file('http://s3.amazonaws.com/discover-song/discover.csv'));
+            unset($data[$_COOKIE['discov_ind']]);
+            sort($data);
+            $datacsv = arrayToCsv($data);
+            $fp = fopen('discover.csv', 'w');
+            foreach ($data as $fields) {
+                 fputcsv($fp, $fields);
+             }
+             fclose($fp);
             ini_set('display_errors', 'On');
             ini_set('curl.cainfo', 'S3/cacert.pem');
             require_once('S3/Aws.phar');
@@ -35,8 +35,8 @@
             
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
-    'Key'          => 'file.csv',
-    'SourceFile'   => 'file.csv'
+    'Key'          => 'discover.csv',
+    'SourceFile'   => 'discover.csv'
 ));
             echo $result['Expiration'] . "\n";
 echo $result['ServerSideEncryption'] . "\n";

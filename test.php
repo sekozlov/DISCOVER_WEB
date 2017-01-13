@@ -8,7 +8,9 @@
         <div id="page-wrapper">
             <div class="row">
                             <div style="display: none"> 
-                           <?php require_once "setcook.php";?>
+                           <?php 
+                             ini_set('display_errors', 'On');
+                             require_once "setcook.php";?>
                             <script type="text/javascript">
                                 function getCookie(name) {
                                   var matches = document.cookie.match(new RegExp(

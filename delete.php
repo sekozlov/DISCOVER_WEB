@@ -5,8 +5,9 @@
 
                             </div>
 
+
 <?php 
-            $data = array_map('str_getcsv', file('discover.csv'));
+            $data = array_map('str_getcsv', file('http://s3.amazonaws.com/discover-song/discover.csv'));
             unset($data[$_COOKIE['discov_ind']]);
             sort($data);
             // $datacsv = arrayToCsv($data);
@@ -15,7 +16,13 @@
                 fputcsv($fp, $fields);
             }
             fclose($fp);
-            echo "<script>alert('Сделано =)');
-            document.location='test.php';</script>"; 
+            require('S3/S3.php');
+            $s3 = new S3($AWS_ACCESS_KEY_ID, $AWS_SECRET_KEY_ID);
+            S3::setAuth($AWS_ACCESS_KEY_ID, $AWS_SECRET_KEY_ID);
+            S3::putObject(S3::inputFile('discover.csv', false), 'discover-song', 'discover.csv', S3::ACL_PUBLIC_READ)
+
+            echo "<script>alert('Сделано =)');</script>;
+            // <script>document.location='test.php';
+            </script>"; 
             ?>
 

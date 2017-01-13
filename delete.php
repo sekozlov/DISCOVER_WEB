@@ -56,6 +56,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
        // print_r($fields);
         $datacsv .= str_putcsv($fields);
         $datacsv .= '\n'; }
+        echo $datacsv;
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);

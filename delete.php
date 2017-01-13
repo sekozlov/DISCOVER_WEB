@@ -7,6 +7,7 @@
 
 
 <?php 
+ ini_set('display_errors', 'On');
 function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     {
         // Open a memory "file" for read/write...
@@ -24,7 +25,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     }
  
 
-            ini_set('display_errors', 'On');
+           
            $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);

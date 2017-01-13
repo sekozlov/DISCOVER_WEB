@@ -40,10 +40,10 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
                 $result = $client->getObject(array(
                 'Bucket'       => 'discover-song',
                  'Key'          => 'discover.csv',
-                 'SaveAs' => '/tmp/discover1.csv'
+                 'SaveAs' => '/tmp/discover.csv'
             ));
              //   echo $result['Body'];
-                $data = array_map('str_getcsv', file('/tmp/discover1.csv'));
+                $data = array_map('str_getcsv', file('/tmp/discover.csv'));
            // $data = array_values(array($data));
 
            // echo gettype($result['Body']);

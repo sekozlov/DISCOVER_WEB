@@ -7,6 +7,7 @@
 
 
 <?php 
+            ini_set('display_errors', 'On');
             $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);
@@ -16,7 +17,7 @@
 //                  fputcsv($fp, $fields);
 //              }
 //              fclose($fp);
-            ini_set('display_errors', 'On');
+
             ini_set('curl.cainfo', 'S3/cacert.pem');
             require_once('S3/Aws.phar');
             use Aws\S3\S3Client;

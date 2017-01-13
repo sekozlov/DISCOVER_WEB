@@ -7,33 +7,31 @@
 
 
 <?php 
-function arrayToCsv( array &$fields, $delimiter = ';', $enclosure = '"', $encloseAll = false, $nullToMysqlNull = false ) {
-    $delimiter_esc = preg_quote($delimiter, '/');
-    $enclosure_esc = preg_quote($enclosure, '/');
-
-    $output = array();
-    foreach ( $fields as $field ) {
-        if ($field === null && $nullToMysqlNull) {
-            $output[] = 'NULL';
-            continue;
-        }
-
-        // Enclose fields containing $delimiter, $enclosure or whitespace
-        if ( $encloseAll || preg_match( "/(?:${delimiter_esc}|${enclosure_esc}|\s)/", $field ) ) {
-            $output[] = $enclosure . str_replace($enclosure, $enclosure . $enclosure, $field) . $enclosure;
-        }
-        else {
-            $output[] = $field;
-        }
+function str_putcsv($input, $delimiter = ',', $enclosure = '"')
+    {
+        // Open a memory "file" for read/write...
+        $fp = fopen('php://temp', 'r+');
+        // ... write the $input array to the "file" using fputcsv()...
+        fputcsv($fp, $input, $delimiter, $enclosure);
+        // ... rewind the "file" so we can read what we just wrote...
+        rewind($fp);
+        // ... read the entire line into a variable...
+        $data = fread($fp, 1048576);
+        // ... close the "file"...
+        fclose($fp);
+        // ... and return the $data to the caller, with the trailing newline from fgets() removed.
+        return rtrim($data, "\n");
     }
+ 
 
-    return implode( $delimiter, $output );
-}
           //  ini_set('display_errors', 'On');
-            $data = array_map('str_getcsv', file('discover.csv'));
+           $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);
-             $datacsv = arrayToCsv($data);
+             $datacsv  '';
+        foreach ($data as $fields) {
+        $datacsv .= str_putcsv($fp, $fields);
+        }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);

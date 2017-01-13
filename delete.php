@@ -60,7 +60,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
     'Key'          => 'discover.csv',
-    'Body'          => $data,             
+    'Body'          => $datacsv,             
     //'SourceFile'   => 'discover.csv'
 ));
             echo $result['Expiration'] . "\n";

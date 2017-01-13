@@ -16,6 +16,7 @@
             //     fputcsv($fp, $fields);
             // }
             // fclose($fp);
+            ini_set('curl.cainfo', 'S3/cacert.pem');
             require_once('S3/Aws.phar');
             use Aws\S3\S3Client;
             use Aws\S3\Exception\S3Exception;

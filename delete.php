@@ -24,12 +24,33 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
         return rtrim($data1, "\n");
     }
  
+             ini_set('curl.cainfo', 'S3/cacert.pem');
+            require_once('S3/Aws.phar');
+            use Aws\S3\S3Client;
+            use Aws\S3\Exception\S3Exception;
+            $client = S3Client::factory(array(
+                 'region'            => 'us-east-1',
+    'version'           => '2006-03-01',
+                 'credentials' => array(
+                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
+                 'secret' => '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',
+             )
+            ));
+           // $data = array_map('str_getcsv', file('discover.csv'));
+                $result = $client->getObject(array(
+                'Bucket'       => 'discover-song',
+                 'Key'          => 'discover.csv',
+                 'SaveAs' => '/tmp/discover1.csv'
+            ));
+             //   echo $result['Body'];
+                $data = array_map('str_getcsv', file('/tmp/discover1.csv'));
+           // $data = array_values(array($data));
 
-           
-           $data = array_map('str_getcsv', file('discover.csv'));
+           // echo gettype($result['Body']);
+            print_r($data);
            unset($data[$_COOKIE['discov_ind']]);
-           sort($data);
 
+           sort($data);
              $datacsv = '';
         foreach ($data as $fields) {
        // print_r($fields);
@@ -40,26 +61,11 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
 //                  fputcsv($fp, $fields);
 //              }
 //              fclose($fp);
-
-            ini_set('curl.cainfo', 'S3/cacert.pem');
-            require_once('S3/Aws.phar');
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
-
-
-            $client = S3Client::factory(array(
-                 'region'            => 'us-east-1',
-    'version'           => '2006-03-01',
-                 'credentials' => array(
-                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
-                 'secret' => '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',
-
-             )
-            ));
+          
             
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
-    'Key'          => 'discover.csv',
+    'Key'          => 'discover1.csv',
     'Body'          => $datacsv,             
     //'SourceFile'   => 'discover.csv'
 ));
@@ -68,8 +74,6 @@ echo $result['ServerSideEncryption'] . "\n";
 echo $result['ETag'] . "\n";
 echo $result['VersionId'] . "\n";
 echo $result['RequestId'] . "\n";
-
             echo "<script>alert('Сделано =)');</script>";
            
             ?>
-

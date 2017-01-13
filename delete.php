@@ -65,7 +65,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
             
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
-    'Key'          => 'discover1.csv',
+    'Key'          => 'discover.csv',
     'Body'          => $datacsv,             
     //'SourceFile'   => 'discover.csv'
 ));

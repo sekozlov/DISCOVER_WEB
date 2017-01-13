@@ -47,7 +47,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
            // $data = array_values(array($data));
 
            // echo gettype($result['Body']);
-            print_r($data);
+           // print_r($data);
            unset($data[$_COOKIE['discov_ind']]);
 
            sort($data);
@@ -56,7 +56,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
        // print_r($fields);
         $datacsv .= str_putcsv($fields);
         $datacsv .= '\n'; }
-        echo $datacsv;
+        print_r($datacsv);
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);

@@ -1,6 +1,6 @@
  <?php
                             include_once 'data.php';
-ini_set('display_errors', 'On');
+//ini_set('display_errors', 'On');
                             setcookie ("discov_album", $data[$i][1]);
                             echo $data[$i][1];
                             setcookie ("discov_artist", $data[$i][2]);

@@ -57,7 +57,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
         $datacsv .= str_putcsv($fields);
        // $datacsv .= '\n'; 
         }
-        print_r($datacsv);
+   //     print_r($datacsv);
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);
@@ -76,6 +76,7 @@ echo $result['ServerSideEncryption'] . "\n";
 echo $result['ETag'] . "\n";
 echo $result['VersionId'] . "\n";
 echo $result['RequestId'] . "\n";
-            echo "<script>alert('Сделано =)');</script>";
+            echo "<script>alert('Сделано =)');
+            document.location = 'test.php';</script>";
            
             ?>

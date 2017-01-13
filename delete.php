@@ -8,31 +8,31 @@
 
 <?php 
  ini_set('display_errors', 'On');
-function str_putcsv($input, $delimiter = ',', $enclosure = '"')
-    {
-        // Open a memory "file" for read/write...
-        $fp = fopen('php://temp', 'r+');
-        // ... write the $input array to the "file" using fputcsv()...
-        fputcsv($fp, $input, $delimiter, $enclosure);
-        // ... rewind the "file" so we can read what we just wrote...
-        rewind($fp);
-        // ... read the entire line into a variable...
-        $data1 = fread($fp, 1048576);
-        // ... close the "file"...
-        fclose($fp);
-        // ... and return the $data to the caller, with the trailing newline from fgets() removed.
-        return rtrim($data1, "\n");
-    }
+// function str_putcsv($input, $delimiter = ',', $enclosure = '"')
+//     {
+//         // Open a memory "file" for read/write...
+//         $fp = fopen('php://temp', 'r+');
+//         // ... write the $input array to the "file" using fputcsv()...
+//         fputcsv($fp, $input, $delimiter, $enclosure);
+//         // ... rewind the "file" so we can read what we just wrote...
+//         rewind($fp);
+//         // ... read the entire line into a variable...
+//         $data1 = fread($fp, 1048576);
+//         // ... close the "file"...
+//         fclose($fp);
+//         // ... and return the $data to the caller, with the trailing newline from fgets() removed.
+//         return rtrim($data1, "\n");
+//     }
  
 
            
            $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);
-             $datacsv = '';
-        foreach ($data as $fields) {
-        $datacsv .= str_putcsv($fp,$fields);
-        }
+//              $datacsv = '';
+//         foreach ($data as $fields) {
+//         $datacsv .= str_putcsv($fp,$fields);
+//         }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);
@@ -58,7 +58,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
     'Key'          => 'discover.csv',
-    'Body'          => $datacsv,             
+    'Body'          => $data,             
     //'SourceFile'   => 'discover.csv'
 ));
             echo $result['Expiration'] . "\n";

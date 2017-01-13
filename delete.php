@@ -47,7 +47,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
            // $data = array_values(array($data));
 
            // echo gettype($result['Body']);
-      //      print_r($data);
+            print_r($data);
            unset($data[$_COOKIE['discov_ind']]);
 
            sort($data);

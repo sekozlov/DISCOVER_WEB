@@ -7,10 +7,10 @@
 
 
 <?php 
-//             $data = array_map('str_getcsv', file('discover.csv'));
-//             unset($data[$_COOKIE['discov_ind']]);
-//             sort($data);
-//             $datacsv = arrayToCsv($data);
+            $data = array_map('str_getcsv', file('discover.csv'));
+           unset($data[$_COOKIE['discov_ind']]);
+           sort($data);
+             $datacsv = arrayToCsv($data);
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
 //                  fputcsv($fp, $fields);
@@ -36,7 +36,8 @@
             $result = $client->putObject(array(
     'Bucket'       => 'discover-song',
     'Key'          => 'discover.csv',
-    'SourceFile'   => 'discover.csv'
+    'Body'          => $datacsv,             
+    //'SourceFile'   => 'discover.csv'
 ));
             echo $result['Expiration'] . "\n";
 echo $result['ServerSideEncryption'] . "\n";

@@ -1,6 +1,7 @@
  <?php
                             include_once 'data.php';
                             setcookie ("discov_album", $data[$i][1]);
+                            echo $data[$i][1];
                             setcookie ("discov_artist", $data[$i][2]);
                             setcookie ("discov_song", $data[$i][3]);
                             $data2 = str_replace('&',"%26",$data[$i][2]);

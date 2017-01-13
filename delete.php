@@ -7,29 +7,42 @@
 
 
 <?php 
-            //http://s3.amazonaws.com/discover-song/discover.csv $_COOKIE['discov_ind']
-            $data = array_map('str_getcsv', file('discover.csv'));
-            unset($data[0]);
-            sort($data);
+            //$data = array_map('str_getcsv', file('http://s3.amazonaws.com/discover-song/discover.csv'));
+            // unset($data[$_COOKIE['discov_ind']]);
+            // sort($data);
             // $datacsv = arrayToCsv($data);
-            $fp = fopen('discover.csv', 'w');
-            foreach ($data as $fields) {
-                fputcsv($fp, $fields);
-            }
-            fclose($fp);
-            require('S3/S3.php');
-            
-            //$s3 = new S3($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['$AWS_SECRET_KEY_ID']);
-             S3::setAuth($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['$AWS_SECRET_KEY_ID']);
-            // S3::putObject(S3::inputFile('discover.csv', false), 'discover-song', 'discover1.csv', S3::ACL_PUBLIC_READ)
-              if (S3::putObject(S3::inputFile('discover.csv', false), 'discover-song', 'discover1.csv', S3::ACL_PUBLIC_READ))) {
-    echo "File uploaded.";
-} else {
-    echo "Failed to upload file.";
-}
+            // $fp = fopen('discover.csv', 'w');
+            // foreach ($data as $fields) {
+            //     fputcsv($fp, $fields);
+            // }
+            // fclose($fp);
+            require_once('S3/Aws.phar');
+            use Aws\S3\S3Client;
+            use Aws\S3\Exception\S3Exception;
 
-            echo "<script>alert('Сделано =)');</script>;
-             <script>// document.location='test.php';
-            </script>"; 
+
+            $client = S3Client::factory(array(
+                 'region'            => 'us-east-1',
+    'version'           => '2006-03-01',
+                 'credentials' => array(
+                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
+                 'secret' => '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',
+
+             )
+            ));
+            
+            $result = $client->putObject(array(
+    'Bucket'       => 'discover-song',
+    'Key'          => 'file.csv',
+    'SourceFile'   => 'file.csv'
+));
+            echo $result['Expiration'] . "\n";
+echo $result['ServerSideEncryption'] . "\n";
+echo $result['ETag'] . "\n";
+echo $result['VersionId'] . "\n";
+echo $result['RequestId'] . "\n";
+
+            echo "<script>alert('Сделано =)');</script>";
+           
             ?>
 

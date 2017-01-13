@@ -18,8 +18,8 @@
             }
             fclose($fp);
             require('S3/S3.php');
-            echo $_SERVER['AWS_ACCESS_KEY_ID'];
-//             $s3 = new S3($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['$AWS_SECRET_KEY_ID']);
+            
+            $s3 = new S3($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['$AWS_SECRET_KEY_ID']);
 //             S3::setAuth($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['$AWS_SECRET_KEY_ID']);
 //             S3::putObject(S3::inputFile('discover.csv', false), 'discover-song', 'discover.csv', S3::ACL_PUBLIC_READ)
 

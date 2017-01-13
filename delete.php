@@ -29,6 +29,7 @@
            $data = array_map('str_getcsv', file('discover.csv'));
            unset($data[$_COOKIE['discov_ind']]);
            sort($data);
+print_r($data);
 //              $datacsv = '';
 //         foreach ($data as $fields) {
 //         $datacsv .= str_putcsv($fp,$fields);
@@ -40,32 +41,32 @@
 //              fclose($fp);
 
             ini_set('curl.cainfo', 'S3/cacert.pem');
-            require_once('S3/Aws.phar');
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
+//             require_once('S3/Aws.phar');
+//             use Aws\S3\S3Client;
+//             use Aws\S3\Exception\S3Exception;
 
 
-            $client = S3Client::factory(array(
-                 'region'            => 'us-east-1',
-    'version'           => '2006-03-01',
-                 'credentials' => array(
-                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
-                 'secret' => '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',
+//             $client = S3Client::factory(array(
+//                  'region'            => 'us-east-1',
+//     'version'           => '2006-03-01',
+//                  'credentials' => array(
+//                       'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
+//                  'secret' => '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',
 
-             )
-            ));
+//              )
+//             ));
             
-            $result = $client->putObject(array(
-    'Bucket'       => 'discover-song',
-    'Key'          => 'discover.csv',
-    'Body'          => $data,             
-    //'SourceFile'   => 'discover.csv'
-));
-            echo $result['Expiration'] . "\n";
-echo $result['ServerSideEncryption'] . "\n";
-echo $result['ETag'] . "\n";
-echo $result['VersionId'] . "\n";
-echo $result['RequestId'] . "\n";
+//             $result = $client->putObject(array(
+//     'Bucket'       => 'discover-song',
+//     'Key'          => 'discover.csv',
+//     'Body'          => $data,             
+//     //'SourceFile'   => 'discover.csv'
+// ));
+//             echo $result['Expiration'] . "\n";
+// echo $result['ServerSideEncryption'] . "\n";
+// echo $result['ETag'] . "\n";
+// echo $result['VersionId'] . "\n";
+// echo $result['RequestId'] . "\n";
 
             echo "<script>alert('Сделано =)');</script>";
            

@@ -21,7 +21,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
         // ... close the "file"...
         fclose($fp);
         // ... and return the $data to the caller, with the trailing newline from fgets() removed.
-        return rtrim($data1, "\n");
+        return rtrim($data1, '\n');
     }
  
              ini_set('curl.cainfo', 'S3/cacert.pem');
@@ -55,7 +55,8 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
         foreach ($data as $fields) {
        // print_r($fields);
         $datacsv .= str_putcsv($fields);
-        $datacsv .= '\n'; }
+       // $datacsv .= '\n'; 
+        }
         print_r($datacsv);
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {

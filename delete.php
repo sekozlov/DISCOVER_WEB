@@ -31,7 +31,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
            sort($data);
              $datacsv  '';
         foreach ($data as $fields) {
-        $datacsv .= str_putcsv($fp, $fields);
+        $datacsv .= str_putcsv($fields);
         }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {

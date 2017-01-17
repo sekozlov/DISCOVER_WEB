@@ -80,7 +80,11 @@
                                 </p>
                                 </p>
                                 <p align="center">
+                                <small>
+                                <i>
                                 Осталось лишь <b><script>document.write(left[getCookie('discov_album').split('+').join(' ')]) </script></b> треков!
+                                </i>
+                                </small>
                                 </p>
                             </div>
                             <div id="mainpic1" class="blur">
@@ -94,7 +98,11 @@
                                 <script>document.write(getCookie('discov_artist1').split('+').join(' ')) </script>
                                 </p>
                                 <p align="center">
+                                <small>
+                                <i>
                                 Осталось лишь <b><script>document.write(left[getCookie('discov_album1').split('+').join(' ')]) </script></b> треков!
+                                </small>
+                                </i>
                                 </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name1'));
@@ -113,7 +121,11 @@
                                 </p>
                                 </p>
                                 <p align="center">
+                                <small>
+                                <i>
                                 Осталось лишь <b><script>document.write(left[getCookie('discov_album2').split('+').join(' ')]) </script></b> треков!
+                                </small>
+                                </i>
                                 </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));

@@ -1,5 +1,31 @@
 <html>
- <?php include_once "header.php"; ?>
+ <?php include_once "header.php"; 
+  ini_set('curl.cainfo', 'S3/cacert.pem');
+            require_once('S3/Aws.phar');
+            use Aws\S3\S3Client;
+            use Aws\S3\Exception\S3Exception;
+            $client = S3Client::factory(array(
+                 'region'            => 'us-east-1',
+    'version'           => '2006-03-01',
+                 'credentials' => array(
+                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
+                 'secret' => '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',
+             )
+            ));
+           // $data = array_map('str_getcsv', file('discover.csv'));
+                $result = $client->getObject(array(
+                'Bucket'       => 'discover-song',
+                 'Key'          => 'discover.csv',
+                 'SaveAs' => '/tmp/discover.csv'
+            ));
+             //   echo $result['Body'];
+                $data = array_map('str_getcsv', file('/tmp/discover.csv'));
+                $left = array(' ', ' ');
+                foreach($data as $value) {
+                    array_push($left,$value[1]);
+                };
+                $left = array_count_values($left);
+                ?>
       
 <body>
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
@@ -19,6 +45,7 @@
                                   return matches ? decodeURIComponent(matches[1]) : undefined;
                                 }
                                 console.log(<?php echo count($data);?>);
+                                var left = <?php echo json_encode($left, JSON_PRETTY_PRINT);?>;
                             </script>
                 <!--             <script type="text/javascript">
                             var link = document.getElementsByClassName('search_result_title');
@@ -51,6 +78,10 @@
                                 <p align="center">
                                 <script>document.write(getCookie('discov_artist').split('+').join(' ')) </script>
                                 </p>
+                                </p>
+                                <p align="center">
+                                Осталось лишь <b><script>document.write(left[getCookie('discov_album').split('+').join(' ')]) </script></b> треков!
+                                </p>
                             </div>
                             <div id="mainpic1" class="blur">
                                 <a class="open_window1" href="delete1.php" style="margin-bottom: 10">
@@ -61,6 +92,9 @@
                                 </p>
                                 <p align="center">
                                 <script>document.write(getCookie('discov_artist1').split('+').join(' ')) </script>
+                                </p>
+                                <p align="center">
+                                Осталось лишь <b><script>document.write(left[getCookie('discov_album1').split('+').join(' ')]) </script></b> треков!
                                 </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name1'));
@@ -76,6 +110,10 @@
                                 </p>
                                 <p align="center">
                                 <script>document.write(getCookie('discov_artist2').split('+').join(' ')) </script>
+                                </p>
+                                </p>
+                                <p align="center">
+                                Осталось лишь <b><script>document.write(left[getCookie('discov_album2').split('+').join(' ')]) </script></b> треков!
                                 </p>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));

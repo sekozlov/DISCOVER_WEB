@@ -63,7 +63,8 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default" id="Panelll" >
                         <div class="panel-heading" align="center">
-                           Выбери один трек: он будет считаться прослушанным, остальные вернутся в мешок!
+                           <p>Выбери один трек: он будет считаться прослушанным, остальные вернутся в мешок! </p>
+                           <p>Когда ты не нажимаешь на песенку, в мире грустит один я </p>
                         </div>
                         <!-- /.panel-heading -->
                         <div  class="panel-body">

@@ -68,7 +68,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default" id="Panelll" style="display:block;">
                         <div class="panel-heading" align="center">
-                            Самое время для <b><script>document.write(getCookie('discov_song').split('+').join(' ')) </script></b> с альбома <b><script>document.write(getCookie('discov_album').split('+').join(' ')) </script></b>!
+                            <b><script>document.write(getCookie('discov_album').split('+').join(' ')) </script></b> ждёт-недождётся тебя! :)
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

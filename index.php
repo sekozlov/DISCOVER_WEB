@@ -9,7 +9,8 @@
             <div class="row">
                             <div style="display: none"> 
                             <?php
-                            $data = array_map('str_getcsv', file('discover.csv'));
+                            //$data = array_map('str_getcsv', file('discover.csv'));
+                            include_once "data.php";
                             $i = rand(1,count($data)-1);
                             setcookie ("discov_album", $data[$i][1]);
                             setcookie ("discov_song", $data[$i][3]);

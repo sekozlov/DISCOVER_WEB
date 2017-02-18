@@ -68,7 +68,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default" id="Panelll" style="display:block;">
                         <div class="panel-heading" align="center">
-                            <b><script>document.write(getCookie('discov_album').split('+').join(' ')) </script></b> ждёт-недождётся тебя! :)
+                            <b><script>document.write(getCookie('discov_album').split('+').join(' ')) </script></b> ждёт - не дождётся тебя! :)
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

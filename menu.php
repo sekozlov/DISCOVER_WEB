@@ -22,18 +22,19 @@
 
                         </li>-->
                         <li>
-                            <a href="index.php"><i class="fa fa-gift fa-fw"></i>Time to Discover!</a>
+                            <a href="index.php"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
 <!--                                      class="active" -->
-                            <a href="add_album.php"><i class="fa fa-briefcase fa-fw"></i>Your Discoveriography</a>
+                        <li>
+                            <a href="test.php" ><i class="fa fa-gift fa-fw"></i>Discover</a>
+                        </li>
+                            <a href="add_album.php"><i class="fa fa-gears fa-fw"></i>Your Discoveriography (in process)</a> <!-- КАРТИНКА fa-briefcase -->
                         </li>
                         <li>
-                            <a href="add_album.php" ><i class="fa fa-edit fa-fw"></i>Add Albums</a>
+                            <a href="add_album.php" ><i class="fa fa-gears fa-fw"></i>Add Albums (in process)</a> <!-- КАРТИНКА fa-edit -->
                         </li>
-                         <li>
-                            <a href="test.php" ><i class="fa fa-gears fa-fw"></i>TEST!</a>
-                        </li>
+                         
                         <!--<li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i>Настройка </a>
                         </li>-->

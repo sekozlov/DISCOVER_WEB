@@ -29,11 +29,13 @@
                         <li>
                             <a href="test.php" ><i class="fa fa-gift fa-fw"></i>Discover</a>
                         </li>
-                        <li>        
-                            <a href="add_album.php"><i class="fa fa-gears fa-fw"></i>Your Discoveriography (X)</a> <!-- КАРТИНКА fa-briefcase -->
-                        </li>
+                        <!-- <li>
+                            <a href="add_album.php"><i class="fa fa-gears fa-fw"></i>Your Discoveriography (X)</a> 
+                        </li> -->
+                        <!-- КАРТИНКА fa-briefcase-->
+ 
                         <li>
-                            <a href="add_album.php" ><i class="fa fa-gears fa-fw"></i>Add Albums (X)</a> <!-- КАРТИНКА fa-edit -->
+                            <a href="add_album.php" ><i class="fa fa-plus fa-fw"></i>Add Albums</a> <!-- КАРТИНКА fa-edit -->
                         </li>
                          
                         <!--<li>

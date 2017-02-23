@@ -1,48 +1,55 @@
 <html>
  <?php include_once "header.php"; ?>
-      
 <body>
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
     <?php include_once "menu.php"; ?>
-        <div id="page-wrapper">
-            <div class="row">
-                            <div style="display: none"> 
 
-                <!--             <script type="text/javascript">
-                            var link = document.getElementsByClassName('search_result_title');
-                            var href = link["0"].href;
-                            var sub = href.substr(16)
-                            console.log(sub);
-                            </script> -->
-                             </div>
-                <div class="col-lg-12" align="center">
-                    <h1 class="page-header">Добро пожаловать в мир новой музыки!</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+        <div id="page-wrapper">
+         <div id="form_autentif" style="min-height: 806px;">
+        <div class="row">
+            <div class="col-lg-18 panel panel-default">
+                <div class="panel-heading">Добавить альбом</div>
+                <div class="panel-body">
+                        <label>Привет! Введи исполнителя и альбом, я постараюсь найти его для тебя.</label>
+                        <input class="form-control" id="newartist" placeholder="Исполнитель">
+                        <input class="form-control" id="newalbum" placeholder="Альбом">
+                                            <button onclick="find_album()" class="btn btn-primary"  >Поискать</button> 
+
+                        <table id="dataTables-tracks" width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example" style="font-size: 9pt">
+                                    <thead>
+                                    <tr>
+                                        <!-- <th class="sorting_desc"><input type="checkbox" checked="true" id="all_checked_cnt" onclick="disable_all()"></th> -->
+                                        <th></th>
+                                        <th>№</th>
+                                        <th>Трек</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    </tbody>
+                                </table>
+            <div style="display: inline-block;">
+            <button onclick="add_album()" class="btn btn-danger"  >Добавить</button> 
+            <!-- <label style="font-weight: bold;">
+                    <input id='isadmin' value="false" style="display:inline;" type="checkbox">Обрезать времечко
+            </label> -->
+
             </div>
-       <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default" id="Panelll" style="display:block;">
-                        <div class="panel-heading" align="center">
-                            Страница находится в разработке.
-                        </div>
+            </div>
+            </div>
+            </div>
+    </div>
+
+            
+                    
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
+<!--                         <div class="panel-body">
                             <div id="mainpic" align="center" style="margin-left: auto; margin-right: auto; margin-top: 10%;margin-bottom: 10%;">
                             <a class="open_window" href="index.php">
                                 <img id="image" width="200" height="200" src="IMGS/gears.gif" >
-                                </a>
+                                </a> -->
 
-                            </div>
-                            <!-- /.table-responsive -->
-                            
-                        </div>
-
-                        <!-- /.panel-body -->
-                    </div>
-            </div>
-        </div>
     </div>
     <?php include_once "footer.php"; ?>
 

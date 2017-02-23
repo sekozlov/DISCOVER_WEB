@@ -16,8 +16,14 @@ if ($_POST["Test"]) {
     $nodes = $elements[0]->childNodes;
     $i = 1;
     foreach ($nodes as $node) {
-            $arrFilter[] = array($i,explode("\n",substr($node->nodeValue , 0,75))[0]);
+            if (strlen(trim(explode(" \n",substr($node->nodeValue , 0,75))[0]))<3 or is_numeric(explode("-",explode(" \n",substr($node->nodeValue , 0,75))[0])[0])==1){
+            $arrFilter[] = array($i,explode(" \n",substr($node->nodeValue , 0,75))[2]);
             $i = $i+1;
+        }
+        else{
+            $arrFilter[] = array($i,explode(" \n",substr($node->nodeValue , 0,75))[0]);
+            $i = $i+1;
+        }
         }
     unset($_SESSION['ADD_ALBUM']);
     $album_info[] = array($_POST["newartist"],trim($_POST["newalbum"]));

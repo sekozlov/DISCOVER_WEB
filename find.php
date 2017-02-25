@@ -17,11 +17,11 @@ if ($_POST["Test"]) {
     $i = 1;
     foreach ($nodes as $node) {
             if (strlen(trim(explode(" \n",substr($node->nodeValue , 0,75))[0]))<3 or is_numeric(explode("-",explode(" \n",substr($node->nodeValue , 0,75))[0])[0])==1){
-            $arrFilter[] = array($i,explode(" \n",substr($node->nodeValue , 0,75))[2]);
+            $arrFilter[] = array($i,trim(explode(" \n",substr($node->nodeValue , 0,75))[2]));
             $i = $i+1;
         }
         else{
-            $arrFilter[] = array($i,explode(" \n",substr($node->nodeValue , 0,75))[0]);
+            $arrFilter[] = array($i,trim(explode(" \n",substr($node->nodeValue , 0,75))[0]));
             $i = $i+1;
         }
         }

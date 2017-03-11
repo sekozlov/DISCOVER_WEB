@@ -9,7 +9,7 @@ if(isset($_POST['user_id'])){
         $ciphertext_dec = substr($ciphertext_dec, 16);
         $plaintext_dec = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key,$ciphertext_dec, MCRYPT_MODE_CBC, $iv_dec);
         echo $plaintext_dec;
-        if($plaintext_dec === $_POST['password']){
+        if($plaintext_dec == $_POST['password']){
              // print_r($res);
               setcookie("discover_id", "sobaka", time()+60*60*24*30);
         echo 'Авторизация прошла успешно';

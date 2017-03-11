@@ -1,6 +1,6 @@
 
 <?php
-echo $_POST['password'];
+echo strlen($_POST['password']);
 echo $_POST['user_id'];
 if(isset($_POST['user_id'])){
         $key = pack('H*', "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
@@ -8,7 +8,7 @@ if(isset($_POST['user_id'])){
         $iv_dec = substr($ciphertext_dec, 0, 16);
         $ciphertext_dec = substr($ciphertext_dec, 16);
         $plaintext_dec = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key,$ciphertext_dec, MCRYPT_MODE_CBC, $iv_dec);
-        echo $plaintext_dec;
+        echo strlen($plaintext_dec);
         if($plaintext_dec == $_POST['password']){
              // print_r($res);
               setcookie("discover_id", "sobaka", time()+60*60*24*30);

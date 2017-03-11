@@ -1,6 +1,7 @@
 
 <?php
-
+echo $_POST['password'];
+echo $_POST['user_id'];
 if(isset($_POST['user_id'])){
         $key = pack('H*', "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
         $ciphertext_dec = base64_decode('8d9AVia+A8epe6h6hD36Vu+xlHHDVAnV09r36HSQJDI=');

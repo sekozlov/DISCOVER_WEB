@@ -1,65 +1,41 @@
-<?php
-
-include_once "test_session.php";
-$data = $_SESSION['ARR']; 
-// echo "<pre>";
-// print_r($_SESSION['ADD_ALBUM']);
-// echo "</pre>";
-if (count($_SESSION['ADD_ALBUM'])==0) return;
-    $temp=0;
-    for ($i=0;$i<count($_SESSION['ADD_ALBUM']);$i++){
-        $key = $_SESSION['ADD_ALBUM'][$i][0];
-        if ($_SESSION['ADDNOT'][$key]==1) {
-             $temp=1;
-            break;
-        };
-    };
-
-    if ($temp==0) return;
-
-    for ($i=0;$i<count($_SESSION['ADD_ALBUM']);$i++){
-        $temp = $_SESSION['ADD_ALBUM'][$i][0];
-        if($_SESSION['ADDNOT'][$temp]==1){
-         $data[] = array(rand(),$_SESSION['ALBUM_INFO'][0][1],$_SESSION['ALBUM_INFO'][0][0],$_SESSION['ADD_ALBUM'][$i][1]);
-      }
-    }
-
-sort($data);
-function str_putcsv($input, $delimiter = ',', $enclosure = '"'){
-        // Open a memory "file" for read/write...
-        $fp = fopen('php://temp', 'r+');
-        // ... write the $input array to the "file" using fputcsv()...
-        fputcsv($fp, $input, $delimiter, $enclosure);
-        // ... rewind the "file" so we can read what we just wrote...
-        rewind($fp);
-        // ... read the entire line into a variable...
-        $data1 = fread($fp, 1048576);
-        // ... close the "file"...
-        fclose($fp);
-        // ... and return the $data to the caller, with the trailing newline from fgets() removed.
-        return rtrim($data1, '\n');
-    }
-             $datacsv = '';
-        foreach ($data as $fields) {
-        $datacsv .= str_putcsv($fields);
-        };
-        print_r($datacsv);
-        ini_set('curl.cainfo', 'S3/cacert.pem');
-            require_once('S3/Aws.phar');
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
-            $client = S3Client::factory(array(
-                 'region'            => 'us-east-1',
-                 'version'           => '2006-03-01',
-                 'credentials' => array(
-                 'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
-                 'secret' => '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',
-             )
-            ));
-            $result = $client->putObject(array(
-    'Bucket'       => 'discover-song',
-    'Key'          => 'discover.csv',
-    'Body'          => $datacsv,             
-    //'SourceFile'   => 'discover.csv'
-));
+<?php 
+if(isset($_COOKIE['id'])){
+    header( 'Location: index.php', true, 303 ); 
+}
 ?>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/authorisation.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="firstPage">
+    <div id="form_autentif" style="min-height: 556px;">
+        <div class="row">
+            <div class="col-lg-12 panel panel-default">
+                <div class="panel-heading">Форма авторизации</div>
+                <div class="panel-body">
+
+                    <form action="login.php" method="POST">
+                        <label>Имя пользователя в системе:</label>
+                        <input class="form-control" id="user_id" name="user_id">
+                        <label>Пароль</label>
+                        <input class="form-control" id="password" name="password"  type="password"><br><!--type="submit" value="Войти"/-->
+                        <button type="submit" class="btn btn-primary"  >Войти</button> 
+                    </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        </div>
+</body>
+
+</html>

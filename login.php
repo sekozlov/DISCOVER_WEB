@@ -18,11 +18,11 @@ if(isset($_POST['user_id'])){
              // print_r($res);
               setcookie("id", $res[0][1], time()+60*60*24*30);
         echo 'Авторизация прошла успешно';
-        header( 'Location: /Rostelekom_new/viborka.php', true, 303 ); 
+        header( 'Location: index.php', true, 303 ); 
 
       } else 
       echo "<script>alert('Вы ввели неверный пароль');
-      document.location='/Rostelekom_new/index.php';</script>";   
+      document.location='test1.php';</script>";   
       //header( 'Location: /Rostelekom_new/index.php', true, 303 ); }
 }
 ?>

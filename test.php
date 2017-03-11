@@ -1,5 +1,7 @@
 <html>
  <?php include_once "header.php"; 
+  if(!isset($_COOKIE['discover_id'])){
+    header( 'Location: test1.php', true, 303 );
   ini_set('curl.cainfo', 'S3/cacert.pem');
             require_once('S3/Aws.phar');
             use Aws\S3\S3Client;

@@ -1,7 +1,7 @@
 <html>
  <?php include_once "header.php"; 
  if(!isset($_COOKIE['discover_id'])){
-    header( 'Location: test1.php', true, 303 ); ?>
+    header( 'Location: test1.php', true, 303 );} ?>
       
 <body>
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>

@@ -1,5 +1,5 @@
 <?php 
-if(isset($_COOKIE['id'])){
+if(isset($_COOKIE['discover_id'])){
     header( 'Location: index.php', true, 303 ); 
 }
 ?>

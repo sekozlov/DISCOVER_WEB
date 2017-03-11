@@ -1,6 +1,5 @@
 
 <?php
-require('funcs.php');
 
 if(isset($_POST['user_id'])){
         $res = getUser($_POST['user_id']);

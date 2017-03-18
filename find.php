@@ -59,7 +59,7 @@ if ($_POST["addnot_key"]) {
 
 
 if ($_POST["add_album"]) {
-include_once "test1.php";
+include_once "add.php";
 //SendMailAll();
 }
 ?>

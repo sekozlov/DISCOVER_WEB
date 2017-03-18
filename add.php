@@ -14,6 +14,12 @@ include_once "test_session.php";
          };
      };
     if ($temp==0) return;
+    for ($i=0;$i<count($_SESSION['ADD_ALBUM']);$i++){
+         $temp = $_SESSION['ADD_ALBUM'][$i][0];
+         if($_SESSION['ADDNOT'][$temp]==1){
+          $data[] = array(rand(),$_SESSION['ALBUM_INFO'][0][1],$_SESSION['ALBUM_INFO'][0][0],$_SESSION['ADD_ALBUM'][$i][1]);
+       }
+     }
 sort($data);
  function str_putcsv($input, $delimiter = ',', $enclosure = '"'){
          // Open a memory "file" for read/write...

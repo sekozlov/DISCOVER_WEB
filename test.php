@@ -72,7 +72,7 @@
                         <div  class="panel-body">
                         <div id="panel" style="    display: flex;justify-content: space-between;">
                             <div id="mainpic" class="blur">
-                            <a class="open_window" href="delete.php" style="margin-bottom: 10">
+                            <a class="open_window" href="delete.php" onclick="opennewtab('result.php?al=1')" style="margin-bottom: 10">
                                 <img id="image" width="200" height="200" src="" >
                                 </a>
                                 <p align="center">

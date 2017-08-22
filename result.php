@@ -37,9 +37,9 @@ if (isset($_GET['al'])) {
 
 
 
-
-//$stamp = imagecreatefromjpeg('IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg');
-$im = imagecreatefromjpeg('https://discover-song.herokuapp.com/IMGS/canvas.jpg');
+ini_set('display_errors', 1);
+$stamp = imagecreatefromjpeg('IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg');
+$im = imagecreatefromjpeg('IMGS/canvas.jpg');
 // $target_width =270;
 // $target_height =270;
 // $target_layer=imagecreatetruecolor($target_width,$target_height);

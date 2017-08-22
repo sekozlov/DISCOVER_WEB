@@ -38,7 +38,7 @@ if (isset($_GET['al'])) {
 
 
 
-$stamp = imagecreatefromjpeg('IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg');
+//$stamp = imagecreatefromjpeg('IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg');
 $im = imagecreatefromjpeg('IMGS/canvas.jpg');
 // $target_width =270;
 // $target_height =270;

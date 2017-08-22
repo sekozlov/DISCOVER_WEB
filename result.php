@@ -44,6 +44,8 @@ if ($num == 3) {
 $stamp = imagecreatefromjpeg($pic);
 $im = imagecreatefromjpeg('IMGS/canvas.jpg');
 list($width, $height) = getimagesize($pic);
+list($width1, $height1) = getimagesize($out);
+list($width2, $height2) = getimagesize($out1);
 $target_width =270;
 $target_height =270;
 $target_layer=imagecreatetruecolor($target_width,$target_height);
@@ -54,13 +56,13 @@ $stamp1 = imagecreatefromjpeg($out);
 $target_width =80;
 $target_height =80;
 $target_layer1=imagecreatetruecolor($target_width,$target_height);
-imagecopyresampled($target_layer1,$stamp1,0,0,0,0,$target_width,$target_height, $width,$height);
+imagecopyresampled($target_layer1,$stamp1,0,0,0,0,$target_width,$target_height, $width1,$height1);
 
 $stamp2 = imagecreatefromjpeg($out1);
 $target_width =80;
 $target_height =80;
 $target_layer2=imagecreatetruecolor($target_width,$target_height);
-imagecopyresampled($target_layer2,$stamp2,0,0,0,0,$target_width,$target_height, $width,$height);
+imagecopyresampled($target_layer2,$stamp2,0,0,0,0,$target_width,$target_height, $width2,$height2);
 
 //$text = "Breaking Point";
 

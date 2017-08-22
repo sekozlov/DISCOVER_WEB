@@ -68,9 +68,9 @@ imagecopyresampled($target_layer2,$stamp2,0,0,0,0,$target_width,$target_height, 
 
 $black = imagecolorallocate($im, 0, 0, 0);
 list($left,, $right) = imageftbbox(22, 0, 'Verdana.ttf', $text);
-//$dwidth = ($right - $left)/2;
-$dwidth = ($left - $right)/2;
-$pos = (263 - $dwidth);
+$dwidth = ($right - $left)/2;
+//$dwidth = ($left - $right)/2;
+$pos = (465 - $dwidth);
 Imagettftext($im, 22, 0, $pos, 470, $black, 'Verdana.ttf', $text);
 
 $marge_right = 100;

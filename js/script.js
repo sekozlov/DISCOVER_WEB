@@ -91,6 +91,10 @@ function edit_cntr_mail(elem){
     });
 }
 
+function opennewtab(url ) {
+  var win=window.open(url, '_blank');
+}
+
 function add_album(){
     $('#page-wrapper').html('Вроде получилось.');
     var strPar = 'add_album='+'true';

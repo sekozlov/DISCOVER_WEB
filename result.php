@@ -35,10 +35,10 @@ if (isset($_GET['al'])) {
 // 	$out1 = $_COOKIE['img_name'];
 // };
 
-$pic = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
+$pic = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg';
 $text = $_COOKIE['discov_song'];
-$out = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
-$out1 = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
+$out = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg';
+$out1 = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg';
 
 
 $stamp = imagecreatefromjpeg($pic);

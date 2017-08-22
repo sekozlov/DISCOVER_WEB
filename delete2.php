@@ -73,7 +73,9 @@ echo $result['ServerSideEncryption'] . "\n";
 echo $result['ETag'] . "\n";
 echo $result['VersionId'] . "\n";
 echo $result['RequestId'] . "\n";
-            echo "<script>alert('Сделано =)');
+            echo "<script>
+            window.open('result.php?al=3');
+            alert('Сделано =)');
             document.location = 'test.php';</script>";
            
             ?>

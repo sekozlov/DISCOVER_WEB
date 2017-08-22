@@ -77,7 +77,7 @@ $marge_right = 100;
 $marge_bottom = 100;
 $sx = imagesx($stamp);
 $sy = imagesy($stamp);
-imagecopy($im, $target_layer, 340, 120, 0, 0, 270, 270);
+imagecopy($im, $target_layer, 330, 120, 0, 0, 270, 270);
 imagecopy($im, $target_layer1, 10, 10, 0, 0, 80, 80);
 imagecopy($im, $target_layer2, 838, 10, 0, 0, 80, 80);
 

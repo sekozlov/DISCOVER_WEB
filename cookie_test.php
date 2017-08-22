@@ -1,6 +1,7 @@
 <?php
 
 $text = $_COOKIE['discov_song'];
-echo gettype($text);
-echo $text;
+list($left,, $right) = imageftbbox(22, 0, 'Verdana.ttf', $text);
+echo $left;
+echo $right;
 ?>

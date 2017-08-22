@@ -1,28 +1,44 @@
 <?php
+// header('Content-Type: image/jpg');
+
+// //$background_color = imagecolorallocate ($im, 255, 255, 255);
+// $canvas = imagecreatetruecolor(1920, 1080);
+// $icon1 = imagecreatefromjpeg('worlds.jpg');
+// $icon2 = imagecreatefromjpeg('pants.jpg');
+// // ... add more source images as needed
+// imagecopy($canvas, $icon1, 700, 120, 0, 0, 400, 400);
+// imagecopy($canvas, $icon2, 0, 120, 0, 0, 400, 400);
+// // ... copy additional source images to the canvas as needed
+// imagejpeg($canvas);
 
 if (isset($_GET['al'])) {
     $num = $_GET['al']; // val1
 };
 
 
-if ($num == 1) {
-	$pic = $_COOKIE['img_name'];
-	$text = $_COOKIE['discov_song'];
-	$out = $_COOKIE['img_name1'];
-	$out1 = $_COOKIE['img_name2'];
-};
-if ($num == 2) {
-	$pic = $_COOKIE['img_name1'];
-	$text = $_COOKIE['discov_song1'];
-	$out = $_COOKIE['img_name'];
-	$out1 = $_COOKIE['img_name2'];
-};
-if ($num == 3) {
-	$pic = $_COOKIE['img_name2'];
-	$text = $_COOKIE['discov_song2'];
-	$out = $_COOKIE['img_name1'];
-	$out1 = $_COOKIE['img_name'];
-};
+// if ($num == 1) {
+// 	$pic = $_COOKIE['img_name'];
+// 	$text = $_COOKIE['discov_song'];
+// 	$out = $_COOKIE['img_name1'];
+// 	$out1 = $_COOKIE['img_name2'];
+// };
+// if ($num == 2) {
+// 	$pic = $_COOKIE['img_name1'];
+// 	$text = $_COOKIE['discov_song1'];
+// 	$out = $_COOKIE['img_name'];
+// 	$out1 = $_COOKIE['img_name2'];
+// };
+// if ($num == 3) {
+// 	$pic = $_COOKIE['img_name2'];
+// 	$text = $_COOKIE['discov_song2'];
+// 	$out = $_COOKIE['img_name1'];
+// 	$out1 = $_COOKIE['img_name'];
+// };
+
+$pic = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
+$text = $_COOKIE['discov_song'];
+$out = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
+$out1 = 'IMGS/3+Years+Hollow+-+The+Cracks+album+cover.jpg'
 
 
 $stamp = imagecreatefromjpeg($pic);

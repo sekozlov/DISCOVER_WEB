@@ -42,7 +42,7 @@ if ($num == 3) {
 
 
 $stamp = imagecreatefromjpeg($pic);
-$im = imagecreatefromjpeg('IMGS/canvas.jpg');
+$im = imagecreatefromjpeg('IMGS/canvas5.jpg');
 list($width, $height) = getimagesize($pic);
 list($width1, $height1) = getimagesize($out);
 list($width2, $height2) = getimagesize($out1);

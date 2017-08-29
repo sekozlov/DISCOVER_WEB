@@ -1,3 +1,7 @@
+<?php
+$data = array_map('str_getcsv', file('/tmp/discover.csv'));
+?>
+
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -41,6 +45,12 @@
                         <!--<li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i>Настройка </a>
                         </li>-->
+                        <br>
+                        <br><br><br>
+                        <li>
+                        <a href="#" ><i class="fa fa-bolt fa-fw"></i>Ещё <?php echo count($data);?> треков!</a> 
+                        
+                        </li>
 
                         <?php 
                         if(isset($_COOKIE['id']) && $_COOKIE['id']==1): ?>

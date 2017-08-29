@@ -43,11 +43,24 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
                  'Key'          => 'discover.csv',
                  'SaveAs' => '/tmp/discover.csv'
             ));
+                $result = $client->getObject(array(
+                'Bucket'       => 'discover-song',
+                 'Key'          => 'hist.csv',
+                 'SaveAs' => '/tmp/hist.csv'
+            ));
              //   echo $result['Body'];
                 $data = array_map('str_getcsv', file('/tmp/discover.csv'));
            // $data = array_values(array($data));
            // echo gettype($result['Body']);
           //  print_r($data);
+                date_default_timezone_set('Europe/Kirov');
+                $hdata = array_map('str_getcsv', file('/tmp/hist.csv'));
+                $newrow = array('0' => $data[$_COOKIE['discov_ind1']][2],
+                                '1' => $data[$_COOKIE['discov_ind1']][3],
+                                '2' => date("d.m.y H:i:s")
+                        );
+                $hdata[count($hdata)] = $newrow;
+
            unset($data[$_COOKIE['discov_ind1']]);
            sort($data);
              $datacsv = '';
@@ -55,6 +68,12 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
        // print_r($fields);
         $datacsv .= str_putcsv($fields);
        // $datacsv.= '\n'; 
+        }
+        $hdatacsv = '';
+        foreach ($hdata as $hfields) {
+       // print_r($fields);
+        $hdatacsv .= str_putcsv($hfields);
+       // $datacsv .= '\n'; 
         }
 //             $fp = fopen('discover.csv', 'w');
 //             foreach ($data as $fields) {
@@ -67,6 +86,12 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     'Bucket'       => 'discover-song',
     'Key'          => 'discover.csv',
     'Body'          => $datacsv,             
+    //'SourceFile'   => 'discover.csv'
+));
+            $result = $client->putObject(array(
+    'Bucket'       => 'discover-song',
+    'Key'          => 'hist.csv',
+    'Body'          => $hdatacsv,             
     //'SourceFile'   => 'discover.csv'
 ));
             echo $result['Expiration'] . "\n";

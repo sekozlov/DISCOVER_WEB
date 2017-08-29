@@ -1,6 +1,3 @@
-<?php
-$data = array_map('str_getcsv', file('/tmp/discover.csv'));
-?>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -48,7 +45,9 @@ $data = array_map('str_getcsv', file('/tmp/discover.csv'));
                         <br>
                         <br><br><br>
                         <li>
-                        <a href="#" ><i class="fa fa-bolt fa-fw"></i>Ещё <?php echo count($data);?> треков!</a> 
+                        <a href="#" ><i class="fa fa-bolt fa-fw"></i>Ещё <?php 
+                        $dama = array_map('str_getcsv', file('/tmp/discover.csv'));
+                        echo count($dama);?> треков!</a> 
                         
                         </li>
 

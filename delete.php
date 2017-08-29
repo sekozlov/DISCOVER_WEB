@@ -60,7 +60,7 @@ function str_putcsv($input, $delimiter = ',', $enclosure = '"')
                                 '1' => $data[$_COOKIE['discov_ind']][3],
                                 '2' => date("d.m.y H:i:s")
                         );
-                $hdata[count($hdata)][] = $newrow;
+                $hdata[count($hdata)] = $newrow;
 
            unset($data[$_COOKIE['discov_ind']]);
 

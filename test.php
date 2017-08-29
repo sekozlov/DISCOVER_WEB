@@ -32,13 +32,14 @@
 <body>
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
+    <?php 
+                            // ini_set('display_errors', 'On');
+                             require_once "setcook.php";?>
     <?php include_once "menu.php"; ?>
         <div id="page-wrapper">
             <div class="row">
                             <div style="display: none"> 
-                           <?php 
-                            // ini_set('display_errors', 'On');
-                             require_once "setcook.php";?>
+                           
                             <script type="text/javascript">
                                 function getCookie(name) {
                                   var matches = document.cookie.match(new RegExp(

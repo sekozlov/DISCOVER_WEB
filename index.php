@@ -30,7 +30,7 @@
                             $url1 = $nodes[0]->getAttribute('href');
                             echo $url1;
 
-                            $img_name1 = 'IMGS/'.str_replace(' ',"+",$_COOKIE['discov_artist']).'+-+'.str_replace(' ',"+",$_COOKIE['discov_album']).'+album+cover.jpg';
+                            $img_name1 = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+", $data1).'+album+cover.jpg';
                             
                             if (file_exists($img_name1)) {
                                 $img_name1 = $img_name1;

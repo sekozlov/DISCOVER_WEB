@@ -120,7 +120,7 @@
                 <img id='image1' width="300" height="300" src=$img_name style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
             <script type="text/javascript">
-                                document.getElementById('image1').src = <?php echo $img_name1; ?>;
+                                document.getElementById('image1').src = '"'+<?php echo $img_name1; ?>+'"';
                                 </script>
 
         </div>

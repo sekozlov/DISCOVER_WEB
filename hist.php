@@ -20,7 +20,7 @@
                                     <thead>
                                     <tr>
                                         <!-- <th class="sorting_desc"><input type="checkbox" checked="true" id="all_checked_cnt" onclick="disable_all()"></th> -->
-                                        <th></th>
+                                        
 										<th>Исполнитель</th>
                                         <th>Трек</th>
                                         <th>Дата</th>
@@ -31,7 +31,7 @@
                                     </tbody>
                                 </table>
             <div style="display: inline-block;">
-   
+            <button onclick="add_album()" class="btn btn-danger"  >Добавить</button> 
             <!-- <label style="font-weight: bold;">
                     <input id='isadmin' value="false" style="display:inline;" type="checkbox">Обрезать времечко
             </label> -->

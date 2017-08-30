@@ -2,7 +2,7 @@
  <?php include_once "header.php";
   if(!isset($_COOKIE['discover_id'])){
     header( 'Location: test1.php', true, 303 );}?>
-<body>
+<body onload="histFunct()">
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
     <?php include_once "menu.php"; ?>
@@ -10,13 +10,11 @@
         <div id="page-wrapper">
          <div id="form_autentif" style="min-height: 806px;">
         <div class="row">
-            <div class="col-lg-18 panel panel-default" onload="histFunct()">
+            <div class="col-lg-18 panel panel-default">
                 <div class="panel-heading">Добавить альбом</div>
                 <div class="panel-body">
-                        <label>Привет! Введи исполнителя и альбом, я постараюсь найти его для тебя.</label>
-                        <input class="form-control" id="newartist" placeholder="Исполнитель">
-                        <input class="form-control" id="newalbum" placeholder="Альбом">
-                                            <button onclick="find_album()" class="btn btn-primary"  >Поискать</button> 
+                        <label>История.</label>
+                        
 
                         <table id="dataTables-hist" width="100%" class="table table-striped table-bordered table-hover" style="font-size: 9pt">
                                     <thead>
@@ -32,7 +30,7 @@
                                     </tbody>
                                 </table>
             <div style="display: inline-block;">
-            <button onclick="add_album()" class="btn btn-danger"  >Добавить</button> 
+            
             <!-- <label style="font-weight: bold;">
                     <input id='isadmin' value="false" style="display:inline;" type="checkbox">Обрезать времечко
             </label> -->

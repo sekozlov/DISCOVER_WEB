@@ -1,6 +1,21 @@
 <?php 
 // ini_set('display_errors', 'On');
 session_start();
+function str_putcsv($input, $delimiter = ',', $enclosure = '"')
+    {
+        // Open a memory "file" for read/write...
+        $fp = fopen('php://temp', 'r+');
+        // ... write the $input array to the "file" using fputcsv()...
+        fputcsv($fp, $input, $delimiter, $enclosure);
+        // ... rewind the "file" so we can read what we just wrote...
+        rewind($fp);
+        // ... read the entire line into a variable...
+        $data1 = fread($fp, 1048576);
+        // ... close the "file"...
+        fclose($fp);
+        // ... and return the $data to the caller, with the trailing newline from fgets() removed.
+        return rtrim($data1, '\n');
+    }
 if ($_POST["Test"]) {
     require_once ('simplehtml/simple_html_dom.php');
     $url = 'https://www.discogs.com/search/?q='.str_replace(' ',"+",$_POST["newartist"]).'+-+'.str_replace(' ',"+",$_POST["newalbum"]).'&type=all';
@@ -36,6 +51,30 @@ if ($_POST["Test"]) {
     }
     
     echo json_encode($arrFilter);
+};
+
+
+if ($_POST["Hist"]) {
+    ini_set('curl.cainfo', 'S3/cacert.pem');
+            require_once('S3/Aws.phar');
+            use Aws\S3\S3Client;
+            use Aws\S3\Exception\S3Exception;
+            $client = S3Client::factory(array(
+                 'region'            => 'us-east-1',
+    'version'           => '2006-03-01',
+                 'credentials' => array(
+                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
+                 'secret' => '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',
+             )
+            ));
+	$result = $client->getObject(array(
+                'Bucket'       => 'discover-song',
+                 'Key'          => 'hist.csv',
+                 'SaveAs' => '/tmp/hist.csv'
+            ));
+	$hdata = array_map('str_getcsv', file('/tmp/hist.csv'));
+    
+    echo json_encode($hdata);
 };
 
     // $url = 'https://www.discogs.com/search/?q='.str_replace(' ',"+",'linkin park').'+-+'.str_replace(' ',"+",'meteora').'&type=all';

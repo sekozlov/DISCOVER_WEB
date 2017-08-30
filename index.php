@@ -29,26 +29,14 @@
                             $url1 = $nodes[0]->getAttribute('href');
                             echo $url1;
 
-                            $img_name = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.jpg';
-                            if (file_exists($img_name)) {
-                                $img_name = $img_name;
+                            $img_name1 = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.jpg';
+                            
+                            if (file_exists($img_name1)) {
+                                $img_name1 = $img_name1;
                             } else {
-                                if (file_exists('IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.jpeg')) {
-                                    $img_name = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.jpeg';
-                                } else {
-                                    if (file_exists('IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.png')) {
-                                    $img_name = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.png';
-                                } else {
-                                    $img_name = 'IMGS/noalbum.jpg';
-                                }
-                                }
+                                $img_name1 = 'IMGS/noalbum.jpg';
                             }
-                            if (file_exists($img_name)) {
-                                $img_name = $img_name;
-                            } else {
-                                $img_name = 'IMGS/noalbum.jpg';
-                            }
-                            setcookie ("img_name", $img_name);
+                            setcookie ("img_name", $img_name1);
                             ?>
                             <script type="text/javascript">
                                 function getCookie(name) {
@@ -80,7 +68,7 @@
                         <div class="panel-body">
                             <div id="mainpic" align="center" class="blur pic">
                             <a class="open_window" href="#">
-                                <img id="image" width="400" height="400" src=$img_name >
+                                <img id="image" width="400" height="400" src=$img_name1 >
                                 </a>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));

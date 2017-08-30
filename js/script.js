@@ -109,3 +109,75 @@ function add_album(){
     });
     
 }
+
+function histFunct(){
+    var strPar = 'Hist=true';
+    
+
+    $('#dataTables-hist tbody').html('');
+    console.log($('#dataTables-hist'));
+    //var elemload = document.getElementById("loader");
+    
+    //elemload.style.display = "block";
+    $.ajax({
+    type: "POST",
+    url: "find.php",
+    data: strPar,
+    success: function(msg){
+            msg=JSON.parse(msg);
+            console.log(msg);
+            var arr=msg; var htmlStr="";
+            arr.forEach(function(item, i, arr) {
+           // htmlStr=htmlStr+"<tr>";
+           // htmlStr=htmlStr+"<td>";
+                //htmlStr=htmlStr+"<input>";
+                //htmlStr=htmlStr+"</td>";
+                item.unshift('<input type="checkbox" class="control_row" checked="true" onclick="edit_cntr_mail(this);" id="'+item[0]+'">');
+            item.forEach(function(itemTd, i, item) {
+                //htmlStr=htmlStr+"<td>";
+                //htmlStr=htmlStr+itemTd;
+               // htmlStr=htmlStr+"</td>";
+
+            });
+            //htmlStr=htmlStr+"</tr>";
+        });
+        
+        //$('#dataTables-rassilka tbody').html(htmlStr);
+            if ( $.fn.dataTable.isDataTable( '#dataTables-hist' ) ) {
+            table = $('#dataTables-hist').DataTable();
+            table.destroy();
+            }
+            
+            
+            $('#dataTables-hist').DataTable({
+            data:arr,
+                responsive: false,
+                language: {
+                    "processing": "Подождите...",
+                    "search": "Поиск:",
+                    "lengthMenu": "Показать _MENU_ записей",
+                    "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                    "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                    "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                    "infoPostFix": "",
+                    "loadingRecords": "Загрузка записей...",
+                    "zeroRecords": "Записи отсутствуют.",
+                    "emptyTable": "В таблице отсутствуют данные",
+                    "paginate": {
+                    "first": "Первая",
+                    "previous": "Предыдущая",
+                    "next": "Следующая",
+                    "last": "Последняя"
+                    },
+                    "aria": {
+                    "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                    "sortDescending": ": активировать для сортировки столбца по убыванию"
+                    }
+                    }
+            });
+            // elemload.style.display = "none";
+        
+    }
+    });
+
+}

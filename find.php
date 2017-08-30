@@ -58,7 +58,7 @@ if ($_POST["Hist"]) {
     include_once "test_session.php";
 	$hdata = $_SESSION['ARRHIST']; 
 	function filterArray($value){
-		return ($value != null);
+		return ($value != "");
 	}
 	$hdata = array_filter($hdata, 'filterArray');
 	for ($i = 1; $i < count($hdata)+1; $i++) {

@@ -6,14 +6,16 @@
 <body>
             <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
     <div id="wrapper">
-    <?php include_once "menu.php"; ?>
+    <?php 
+     include_once "data.php";
+     //$dama = array_map('str_getcsv', file('/tmp/discover.csv'));
+     include_once "menu.php"; ?>
         <div id="page-wrapper">
             <div class="row">
                             <div style="display: none"> 
                             <?php
                             //$data = array_map('str_getcsv', file('discover.csv'));
-                            include_once "data.php";
-                            $dama = array_map('str_getcsv', file('/tmp/discover.csv'));
+                            
                             $i = rand(1,count($data)-1);
                             setcookie ("discov_album", $dama[$i][1]);
                             setcookie ("discov_song", $dama[$i][3]);

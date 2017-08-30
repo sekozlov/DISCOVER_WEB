@@ -127,20 +127,20 @@ function histFunct(){
             msg=JSON.parse(msg);
             console.log(msg);
             var arr=msg; var htmlStr="";
-            //arr.forEach(function(item, i, arr) {
+            arr.forEach(function(item, i, arr) {
            // htmlStr=htmlStr+"<tr>";
            // htmlStr=htmlStr+"<td>";
                 //htmlStr=htmlStr+"<input>";
                 //htmlStr=htmlStr+"</td>";
-                //item.unshift('<input type="checkbox" class="control_row" checked="true" onclick="edit_cntr_mail(this);" id="'+item[0]+'">');
-            //item.forEach(function(itemTd, i, item) {
+                item.unshift('<input type="checkbox" class="control_row" checked="true" onclick="edit_cntr_mail(this);" id="'+item[0]+'">');
+            item.forEach(function(itemTd, i, item) {
                 //htmlStr=htmlStr+"<td>";
                 //htmlStr=htmlStr+itemTd;
                // htmlStr=htmlStr+"</td>";
 
-            //});
+            });
             //htmlStr=htmlStr+"</tr>";
-        //});
+        });
         
         //$('#dataTables-rassilka tbody').html(htmlStr);
             if ( $.fn.dataTable.isDataTable( '#dataTables-hist' ) ) {

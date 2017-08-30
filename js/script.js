@@ -127,7 +127,7 @@ function histFunct(){
             msg=JSON.parse(msg);
             console.log(msg);
             var arr=msg; var htmlStr="";
-            arr.forEach(function(item, i, arr) {
+            //arr.forEach(function(item, i, arr) {
            // htmlStr=htmlStr+"<tr>";
            // htmlStr=htmlStr+"<td>";
                 //htmlStr=htmlStr+"<input>";
@@ -140,7 +140,7 @@ function histFunct(){
 
             //});
             //htmlStr=htmlStr+"</tr>";
-        });
+        //});
         
         //$('#dataTables-rassilka tbody').html(htmlStr);
             if ( $.fn.dataTable.isDataTable( '#dataTables-hist' ) ) {

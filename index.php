@@ -73,7 +73,8 @@
                                 </a>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));
-                                document.getElementById('image').src = getCookie('img_name');
+                                document.getElementById('image').src = '"'+<?php echo $img_name1; ?>+'"'; 
+                                 <!-- getCookie('img_name'); -->
                                 </script>
                                 <script>
                                 function show_album(){
@@ -117,7 +118,7 @@
 
                              </div>
             <div class='popimg' style="float:right; align-self: center; width: 310px;">
-                <img id='image1' width="300" height="300" src=$img_name style="margin-left: auto;margin-right: auto; display: inline-block;">
+                <img id='image1' width="300" height="300" src='IMGS/ActiOn_1.jpg' style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
             <script type="text/javascript">
                                 document.getElementById('image1').src = '"'+<?php echo $img_name1; ?>+'"';

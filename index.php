@@ -69,7 +69,7 @@
                         <div class="panel-body">
                             <div id="mainpic" align="center" class="blur pic">
                             <a class="open_window" href="#">
-                                <img id="image" width="400" height="400" src=$img_name1 >
+                                <img id="image" width="400" height="400" src='IMGS/ActiOn_1.jpg'>
                                 </a>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));

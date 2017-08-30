@@ -31,7 +31,7 @@
                                     </tbody>
                                 </table>
             <div style="display: inline-block;">
-            <button onclick="add_album()" class="btn btn-danger"  >Добавить</button> 
+   
             <!-- <label style="font-weight: bold;">
                     <input id='isadmin' value="false" style="display:inline;" type="checkbox">Обрезать времечко
             </label> -->

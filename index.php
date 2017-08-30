@@ -80,7 +80,7 @@
                         <div class="panel-body">
                             <div id="mainpic" align="center" class="blur pic">
                             <a class="open_window" href="#">
-                                <img id="image" width="400" height="400" src="IMGS/ActiOn_3.jpg" >
+                                <img id="image" width="400" height="400" src=$img_name >
                                 </a>
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));
@@ -128,7 +128,7 @@
 
                              </div>
             <div class='popimg' style="float:right; align-self: center; width: 310px;">
-                <img id='image1' width="300" height="300" src="IMGS/ActiOn_3.jpg" style="margin-left: auto;margin-right: auto; display: inline-block;">
+                <img id='image1' width="300" height="300" src=$img_name style="margin-left: auto;margin-right: auto; display: inline-block;">
             </div>
             <script type="text/javascript">
                                 document.getElementById('image1').src = getCookie('img_name');

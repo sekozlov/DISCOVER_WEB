@@ -32,7 +32,7 @@ session_start();
                 unset($_SESSION['ARR']);
 				unset($_SESSION['ARRHIST']);
 				$_SESSION['ARR']=$data;
-				$_SESSION['ARRHIST']=$hdata;
+				$_SESSION['ARRHIST']=$hdata[0];
 
 // $arrFilter=SuperFilter();
 // unset($_SESSION['MAIL']);

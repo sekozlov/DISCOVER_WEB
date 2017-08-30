@@ -28,11 +28,10 @@ session_start();
              //   echo $result['Body'];
                 $data = array_map('str_getcsv', file('/tmp/discover.csv'));
 				$hdata = array_map('str_getcsv', file('/tmp/hist.csv'));
-				$hdata = array($hdata);
-                unset($_SESSION['ARR']);
+				unset($_SESSION['ARR']);
 				unset($_SESSION['ARRHIST']);
 				$_SESSION['ARR']=$data;
-				$_SESSION['ARRHIST']=$hdata[0];
+				$_SESSION['ARRHIST']=$hdata;
 
 // $arrFilter=SuperFilter();
 // unset($_SESSION['MAIL']);

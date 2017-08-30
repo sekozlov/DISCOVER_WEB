@@ -17,8 +17,9 @@
                             //$data = array_map('str_getcsv', file('discover.csv'));
                             
                             $i = rand(1,count($data)-1);
-                            setcookie ("discov_album", $dama[$i][1]);
+                            setcookie ("discov_album", str_replace('&',"%26",$dama[$i][1]));
                             setcookie ("discov_song", $dama[$i][3]);
+                            setcookie ("discov_artist", str_replace('&',"%26",$dama[$i][2]));
                             $data2 = str_replace('&',"%26",$dama[$i][2]);
                             $data1 = str_replace('&',"%26",$dama[$i][1]);
                             $url = 'https://www.discogs.com/search/?q='.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'&type=all';
@@ -29,7 +30,7 @@
                             $url1 = $nodes[0]->getAttribute('href');
                             echo $url1;
 
-                            $img_name1 = 'IMGS/'.str_replace(' ',"+",$data2).'+-+'.str_replace(' ',"+",$data1).'+album+cover.jpg';
+                            $img_name1 = 'IMGS/'.str_replace(' ',"+",$_COOKIE['discov_artist']).'+-+'.str_replace(' ',"+",$_COOKIE['discov_album']).'+album+cover.jpg';
                             
                             if (file_exists($img_name1)) {
                                 $img_name1 = $img_name1;

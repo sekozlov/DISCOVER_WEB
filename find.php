@@ -55,24 +55,9 @@ if ($_POST["Test"]) {
 
 
 if ($_POST["Hist"]) {
-    ini_set('curl.cainfo', 'S3/cacert.pem');
-            require_once('S3/Aws.phar');
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
-            $client = S3Client::factory(array(
-                 'region'            => 'us-east-1',
-    'version'           => '2006-03-01',
-                 'credentials' => array(
-                      'key'    => 'AKIAIT5EXYJMQFCDDSKQ',
-                 'secret' => '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',
-             )
-            ));
-	$result = $client->getObject(array(
-                'Bucket'       => 'discover-song',
-                 'Key'          => 'hist.csv',
-                 'SaveAs' => '/tmp/hist.csv'
-            ));
-	$hdata = array_map('str_getcsv', file('/tmp/hist.csv'));
+    include_once "test_session.php";
+		
+	$hdata = $_SESSION['ARRHIST']; 
     
     echo json_encode($hdata);
 };

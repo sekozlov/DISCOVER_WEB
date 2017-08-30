@@ -56,8 +56,12 @@ if ($_POST["Test"]) {
 
 if ($_POST["Hist"]) {
     include_once "test_session.php";
-		
 	$hdata = $_SESSION['ARRHIST']; 
+	$arr = [];
+	for ($i = 0; $i < count($hdata); $i++) {
+		$arr[] = $hdata[$i]
+	}
+	
     unset($hdata[0]);
     echo json_encode($hdata);
 };

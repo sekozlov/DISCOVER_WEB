@@ -62,8 +62,8 @@ if ($_POST["Hist"]) {
 		$arr[] = $hdata[$i];
 	}
 	
-    unset($hdata[0]);
-    echo json_encode($hdata);
+    unset($arr[0]);
+    echo json_encode($arr);
 };
 
     // $url = 'https://www.discogs.com/search/?q='.str_replace(' ',"+",'linkin park').'+-+'.str_replace(' ',"+",'meteora').'&type=all';

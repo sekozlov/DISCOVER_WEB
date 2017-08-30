@@ -127,8 +127,7 @@ function histFunct(){
             msg=JSON.parse(msg);
             console.log(msg);
             var arr=msg; var htmlStr="";
-			var l = []; // Will hold the array of Node's
-			for(var i = 0, ll = arr.length; i != ll; l.push(arr[i++]));
+			let myArray = Array.from(arr)
             arr.forEach(function(item, i, arr) {
            // htmlStr=htmlStr+"<tr>";
            // htmlStr=htmlStr+"<td>";

@@ -59,7 +59,7 @@ if ($_POST["Hist"]) {
 	$hdata = $_SESSION['ARRHIST']; 
 	$arr = [];
 	for ($i = 0; $i < count($hdata); $i++) {
-		$arr[] = $hdata[$i]
+		$arr[] = $hdata[$i];
 	}
 	
     unset($hdata[0]);

@@ -58,7 +58,7 @@ if ($_POST["Hist"]) {
     include_once "test_session.php";
 		
 	$hdata = $_SESSION['ARRHIST']; 
-    
+    unset($hdata[0]);
     echo json_encode($hdata);
 };
 

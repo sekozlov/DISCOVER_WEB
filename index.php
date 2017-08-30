@@ -74,7 +74,7 @@
                                 <script type="text/javascript">
                                 console.log(getCookie('img_name'));
                                 document.getElementById('image').src = '"'+<?php echo $img_name1; ?>+'"'; 
-                                 <!-- getCookie('img_name'); -->
+                                // getCookie('img_name');
                                 </script>
                                 <script>
                                 function show_album(){

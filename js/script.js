@@ -127,7 +127,10 @@ function histFunct(){
             msg=JSON.parse(msg);
             console.log(msg);
             var arr=msg; var htmlStr="";
-			let myArray = Array.from(arr)
+			var hiarr = [];
+			for (var i = 0, ref = hiarr.length = arr.length; i < ref; i++) {
+			hiarr[i] = arr[i];
+			}
             arr.forEach(function(item, i, arr) {
            // htmlStr=htmlStr+"<tr>";
            // htmlStr=htmlStr+"<td>";

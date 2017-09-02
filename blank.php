@@ -1,9 +1,8 @@
 <?php
 
 include_once "test_session.php";
-		
-$hdata = $_SESSION['ARRHIST']; 
+ $data = $_SESSION['ARR'];
     
-echo json_encode($hdata);
+print_r($data);
 
 ?>

@@ -21,7 +21,9 @@ ini_set('curl.cainfo', 'S3/cacert.pem');
              //   echo $result['Body'];
                 $data = array_map('str_getcsv', file('/tmp/discover.csv'));
                 $i = rand(1,count($data)-1);
-
-printf("%s\n",$data[$i][1]);
-
+                $y = rand(1,count($data)-1);
+                $x = rand(1,count($data)-1);
+                $arr = array('song1'=$data[$i][1],'song2'=$data[$y][1],'song3'=$data[$x][1],'id1'=$i,'id2'=$y,'id3'=$x);
+//printf("%s\n",$data[$i][1]);
+echo json_encode($arr);
 ?>

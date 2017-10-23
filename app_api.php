@@ -25,5 +25,5 @@ ini_set('curl.cainfo', 'S3/cacert.pem');
                 $x = rand(1,count($data)-1);
                 $arr = array('song1'=$data[$i][1],'song2'=$data[$y][1],'song3'=$data[$x][1],'id1'=$i,'id2'=$y,'id3'=$x);
 //printf("%s\n",$data[$i][1]);
-echo json_encode($arr);
+print_r(json_encode($arr));
 ?>
